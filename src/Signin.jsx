@@ -5,37 +5,48 @@ function Signin(){
 
 const [email, setEmail]= useState("");
 const[password,setPassword]= useState("");
+
 const navigate = useNavigate();
 
-const handleSubmit=(e)=>{
 
+
+
+ const handleSubmit=(e)=>{
+  if (email === "" || password === "") {
+    alert("Please fill in all fields.");}
 e.preventDefault();
 
-const users = JSON.parse(localStorage.getItem("users"));
-const user =users.find(user=>(user.email===email&& user.password===password));
-if (user){
-  // sessionStorage.setItem("isLoggedIn",true);
-  sessionStorage.setItem("user",JSON.stringify(user));
-  navigate("/")
-} else{
-  alert("invalid username or password")
-}
 
-// const storedData = JSON.parse(localStorage.getItem("users"));
-
-
-//  let find = storedData.find(user=>user.email==email&& user.password==password);
-//  console.log(find);
-//  if(find){
-
+  fetch("/signin", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    email,password
+  })
+})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+  .then(data => {
+    sessionStorage.setItem("data", JSON.stringify(data)); // Fix: use JSON.stringify instead of JSON.parse
+    
+    navigate("/");
+  })
+  .catch(error => {
+    console.error("There was a problem signing in:");
+  });
  
-//   navigate("/");
-// } else {
-//     alert("invalid username or password");
-// }
-
 
 }
+
+
+
+
 
 
 
@@ -54,7 +65,7 @@ return(
         />
       </div>
       <div>
-        <label   htmlFor="password">Password:</label>
+        <label   htmlFor="password">Password: </label>
         <input className=""
           type="password"
           id="password"
@@ -71,8 +82,6 @@ return(
 }
 
 export default Signin;
-
-
 
 
 

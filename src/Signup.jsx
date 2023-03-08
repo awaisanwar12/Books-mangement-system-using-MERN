@@ -72,29 +72,29 @@ const data = {
     confirmPassword,
 };
  
- let users=JSON.parse(localStorage.getItem("users"))||[];
+ fetch("/signup",{
+method:"Post",
+headers:{
+    "content-Type":"application/json",
+},
+body:JSON.stringify(data),
+
+ })
+ .then((res)=>res.json())
+ .then((data)=>console.log(data))
+ .catch((err)=>console.error(err));
 
 
- console.log(users);
-  if(users&&users.length){
-  let found =users.find(user=>(user.email==email))
-  if(found){
-  alert("duplicate email");
-  return;
-  }}
+
   
-  users.push(data)
-  localStorage.setItem("users",JSON.stringify(users));
-
   
-  navigate("/dashboard")
 };
 
 
 return (
     
   <div  className="">
-<form>
+
           <label className="label" htmlFor="firstName">First Name </label>
           <input className="form__input" type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/>
       
@@ -115,10 +115,10 @@ return (
           <input className="" type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} placeholder="Confirm Password"/>
     
   
-      <button onClick={(e)=>handleSubmit(e)} type="submit" className="btn">Register</button>
+      <button onClick={(e)=>handleSubmit(e)} type="submit" className="btn">Sign Up</button>
   
-    <button onClick={()=>navigate("/dashboard")}>Dashboard</button>
-    </form>
+    <button onClick={()=>navigate("/signin")}>Sign In</button>
+    
   </div>
 
 
