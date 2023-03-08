@@ -65,7 +65,7 @@ return(
       
       <button className="footer"  type="submit">Log In</button>
     </form>
-    <button onClick={()=>navigate("/dashboard")}>Dashboard</button>
+    <button onClick={()=>navigate("/signup")}>Signup</button>
     </div>
     </div>)
 }
