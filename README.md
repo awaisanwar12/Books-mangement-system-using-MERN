@@ -11,8 +11,8 @@ Features
 GCUF-LIbrary consists of the following features:
 
 Authentication
-It uses JSON Web Token (JWT) for authentication.
-Token is generated on user login
+[It uses JSON Web Token (JWT) for authentication.
+Token is generated on user login]
 Token is perpetually verified to check the state of the user if logged in or not.
 User is assigned normal role on registration
 Admin User is pre-seeded into the application with administrative priviledges
