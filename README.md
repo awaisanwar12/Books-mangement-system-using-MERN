@@ -1,13 +1,13 @@
 Mern Book mangemnt sysytem is a simple application that helps manage a book collection and its processes like stocking,deleting and updating books. With this application users are able to create, update and delete books. 
 Table of Contents
-##Features
-Technologies
+[Features]
+(Technologies
 Installation and Setup
 How to Contribute
 Frequently Asked Questions
 Support or New Features
 License
-Features
+Features)
 GCUF-LIbrary consists of the following features:
 
 Authentication
