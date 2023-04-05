@@ -1,0 +1,20 @@
+.books{
+
+    display:flex;
+flex-direction: column;
+    float: right;
+    width: 85%;
+}
+.h1{
+text-align: center;
+margin:1%;
+}
+.h2{
+    margin:0%
+}
+.table{
+    flex-direction: row;
+}
+.div{
+    align-self: flex-end;
+}
