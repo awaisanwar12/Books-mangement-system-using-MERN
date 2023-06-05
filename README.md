@@ -26,13 +26,7 @@ Authentication
   - Users can view all books in the library.
   - Users can borrow books.
   - Users can return books.
-  - User can view borrowing history.
-- Admin Users
-  - Admin Users have all privileges as Normal Users.
-  - Admin Users can log in.
-  - Admin Users can Add, Modify & Delete Books.
-  - Admin Users can manage application Users.
-  - Admin Users sort & categorize books.
+  - User can view borrowing history..
 ## Technologies
 
 Book management system makes use of a host of modern technologies. The core ones are:
